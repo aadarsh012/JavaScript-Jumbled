@@ -5,25 +5,105 @@
   font-family: "Atkinson Hyperlegible", sans-serif;
 }
 
+@font-face {
+  font-family: "Aquire";
+  src: url("/Aquire-BW0ox.otf");
+}
+
 .container {
   width: 100%;
+  height: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
+  z-index: -100;
+  transition: 0.5s;
+}
+
+.container.active {
+  background-color: black;
+}
+
+.navbar {
+  width: 100%;
+  height: 3.5em;
+  background-color: #f9f6ee;
+  border-bottom: #fffdd0;
+  box-shadow: 0 0 8px 2px #f3e5ab;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 30px;
+  width: 85px;
+  height: 2.5em;
+  left: 110px;
+  top: -7px;
+  font-family: "Aquire";
+  font-weight: bold;
+}
+
+#toggle {
+  position: relative;
+  display: block;
+  border-radius: 160px;
+  background-color: #daf7a6;
+  box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1), inset 0 8px 8px rgba(0, 0, 0, 0.1),
+    inset 0 -4px 4px rgba(0, 0, 0, 0.1);
+  width: 50px;
+  height: 30px;
+  left: 95em;
+  top: -59px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+#toggle .indicator {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  transform: scale(0.9);
+  background: linear-gradient(to bottom, #444, #222);
+  transition: 0.5s;
+}
+
+#toggle.active {
+  background-color: #00f6ff;
+}
+
+#toggle.active .indicator {
+  left: 20px;
 }
 
 .main {
   position: relative;
-  top: 10rem;
+  top: 0;
+  z-index: 1;
   width: 55%;
   height: 25em;
   border-radius: 10px;
   background-color: white;
-  box-shadow: inset 10px 10px 100px 0px #00000026, 3px 3px 10px 0px #636363;
+  transition: 0.5s;
+  box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1), inset 0 8px 8px rgba(0, 0, 0, 0.1),
+    inset 0 -4px 4px rgba(0, 0, 0, 0.05);
+}
+
+.main.active {
+  background-color: #ff8800;
+  box-shadow: 10px 10px 5px 1px rgba(255, 255, 255, 0.2);
 }
 
 .score {
+  position: relative;
+  top: 15px;
+  right: 10em;
   font-size: 30px;
   color: rgb(0, 58, 58);
 }
@@ -36,6 +116,7 @@
   margin: 20px 10px;
   font-weight: bold;
 }
+
 .answer {
   position: relative;
   top: 30px;
@@ -53,7 +134,6 @@
 .button {
   position: relative;
   top: 70px;
-
   margin: 10px 6px;
   padding: 2px;
 }
@@ -63,10 +143,12 @@
   height: 2em;
   font-size: 1.5rem;
   font-weight: bold;
-  color: rgb(255, 217, 0);
-  background-color: rgb(128, 127, 127);
+  /* color: rgb(255, 217, 0); */
+  color: #ff8800;
+  box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1), inset 0 8px 8px rgba(0, 0, 0, 0.1),
+    inset 0 -4px 4px rgba(0, 0, 0, 0.05);
+  background-color: #d3fd85;
   border: none;
-  box-shadow: 0 0 10px 2px gold;
   border-radius: 5px;
 }
 
@@ -83,4 +165,22 @@
 
 #wrongAnswer {
   color: rgb(177, 7, 7);
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  height: 4em;
+  background-color: #daf7a6;
+}
+
+.footer a img {
+  margin-left: 10px;
+  width: 40px;
+  height: 40px;
 }

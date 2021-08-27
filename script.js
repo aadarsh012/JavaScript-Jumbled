@@ -41,7 +41,12 @@ const displayWord = (currentWord) => {
     document.querySelector(".jumbledWord").innerHTML = words[currentWord].jumbled;
     document.querySelector(".msg").innerText = "";
     document.querySelector("#answer").value = "";
+    document.querySelector("#answer").focus();
   }
+
+  // if (document.querySelector("#answer").value === "") {
+  //   document.querySelector("#button").setAttribute("disabled", "true");
+  // }
 };
 displayWord(currentWord);
 
@@ -71,3 +76,14 @@ const checkAnswer = (word) => {
 document
   .querySelector("#button")
   .setAttribute("onclick", "checkAnswer(words[currentWord].correct)");
+
+// toggle Dark Mode
+
+const container = document.querySelector(".container");
+const main = document.querySelector(".main");
+const toggle = document.querySelector("#toggle");
+toggle.onclick = function () {
+  toggle.classList.toggle("active");
+  container.classList.toggle("active");
+  main.classList.toggle("active");
+};
