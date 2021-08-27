@@ -65,7 +65,7 @@
     inset 0 -4px 4px rgba(0, 0, 0, 0.1);
   width: 50px;
   height: 30px;
-  left: 95em;
+  left: 90em;
   top: -59px;
   transition: 0.5s;
   cursor: pointer;
@@ -117,7 +117,7 @@
 .score {
   position: relative;
   top: 15px;
-  right: 10em;
+  right: 7em;
   font-size: 30px;
   color: rgb(0, 58, 58);
 }
@@ -193,8 +193,11 @@
   background-color: #daf7a6;
 }
 
-.footer a img {
+footer a {
   margin-left: 10px;
-  width: 40px;
-  height: 40px;
+}
+
+.footer i {
+  font-size: 3em;
+  color: #222;
 }
