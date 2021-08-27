@@ -164,6 +164,7 @@
   background-color: #d3fd85;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .msg {
