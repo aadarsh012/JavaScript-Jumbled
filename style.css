@@ -75,7 +75,7 @@
 }
 
 #toggle.active {
-  background-color: #00f6ff;
+  background-color: #ffc300;
 }
 
 #toggle.active .indicator {
