@@ -47,6 +47,15 @@
   font-weight: bold;
 }
 
+#toggle::before {
+  content: "Light";
+  position: relative;
+  top: 5px;
+  left: -55px;
+  transition: 0.5s;
+  font-family: "Aquire";
+}
+
 #toggle {
   position: relative;
   display: block;
@@ -76,6 +85,11 @@
 
 #toggle.active {
   background-color: #ffc300;
+}
+
+#toggle.active::before {
+  left: 55px;
+  content: "Dark";
 }
 
 #toggle.active .indicator {
