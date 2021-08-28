@@ -204,3 +204,71 @@ footer a {
   font-size: 3em;
   color: #222;
 }
+
+@media (orientation: portrait), (max-width: 500px) {
+  #toggle {
+    width: 40px;
+    height: 25px;
+    left: 20em;
+    top: -59px;
+  }
+  #toggle .indicator {
+    width: 25px;
+    height: 25px;
+  }
+  #toggle::before {
+    content: "";
+  }
+
+  #toggle.active::before {
+    content: "";
+  }
+
+  #toggle.active .indicator {
+    left: 15px;
+  }
+
+  .main {
+    top: -40px;
+    width: 90%;
+    height: 25em;
+  }
+
+  .score {
+    top: 20px;
+    right: 4em;
+    font-size: 20px;
+  }
+
+  .jumbledWord {
+    top: 50px;
+
+    font-size: 25px;
+  }
+
+  .answer {
+    position: relative;
+    top: 60px;
+  }
+
+  #answer {
+    width: 80%;
+    height: 1.8em;
+    font-size: 1.5em;
+  }
+
+  .button {
+    top: 100px;
+  }
+
+  #button {
+    width: 8em;
+    height: 1.5em;
+    font-size: 1.5rem;
+  }
+
+  .msg {
+    top: 110px;
+    font-size: 20px;
+  }
+}
