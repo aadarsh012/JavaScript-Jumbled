@@ -30,6 +30,7 @@ let words = [
 ];
 
 let currentWord = 0;
+console.log(currentWord);
 
 let score = 0;
 
@@ -44,7 +45,9 @@ const displayWord = (currentWord) => {
     document.querySelector("#answer").focus();
   }
 
-  // if (document.querySelector("#answer").value === "") {
+  // if (document.querySelector("#answer").value !== "") {
+  //   document.querySelector("#button").setAttribute("disabled", "false");
+  // } else {
   //   document.querySelector("#button").setAttribute("disabled", "true");
   // }
 };
@@ -73,9 +76,21 @@ const checkAnswer = (word) => {
   }
 };
 
+// Submit on Clicking the button
+
 document
   .querySelector("#button")
   .setAttribute("onclick", "checkAnswer(words[currentWord].correct)");
+
+// Submit on Enter key
+
+let input = document.querySelector("#answer");
+input.addEventListener("keyup", function (event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.querySelector("#button").click();
+  }
+});
 
 // toggle Dark Mode
 
@@ -87,3 +102,5 @@ toggle.onclick = function () {
   container.classList.toggle("active");
   main.classList.toggle("active");
 };
+
+

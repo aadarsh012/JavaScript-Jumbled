@@ -7,7 +7,7 @@
 
 @font-face {
   font-family: "Aquire";
-  src: url("/Aquire-BW0ox.otf");
+  src: url("Aquire-BW0ox.otf");
 }
 
 .container {
@@ -98,12 +98,12 @@
 
 .main {
   position: relative;
-  top: 0;
+  top: -30px;
   z-index: 1;
   width: 55%;
   height: 25em;
   border-radius: 10px;
-  background-color: white;
+  background-color: #fbbc93;
   transition: 0.5s;
   box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1), inset 0 8px 8px rgba(0, 0, 0, 0.1),
     inset 0 -4px 4px rgba(0, 0, 0, 0.05);
@@ -140,6 +140,8 @@
   width: 50%;
   height: 2em;
   border: 1px solid grey;
+  background-color: #fbbc93;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5), inset -4px 4px 5px rgba(255, 255, 255, 0.5);
   border-radius: 4px;
   outline: none;
   font-size: 2em;
