@@ -29,13 +29,20 @@ let words = [
   }
 ];
 
+// Init
+
 let currentWord = 0;
-console.log(currentWord);
+
+// Storing Answers
+
+const answersArray = [];
 
 let score = 0;
 
-const displayWord = (currentWord) => {
-  if (currentWord === words.length) {
+// Displaying Jumbled Word
+
+const displayWord = (ansArr) => {
+  if (ansArr.length === words.length) {
     alert("Congratulations");
     location.reload();
   } else {
@@ -51,28 +58,30 @@ const displayWord = (currentWord) => {
   //   document.querySelector("#button").setAttribute("disabled", "true");
   // }
 };
-displayWord(currentWord);
+
+displayWord(answersArray);
+
+// Checking for answer
 
 const checkAnswer = (word) => {
   if (word.toLowerCase() === document.querySelector("#answer").value.toLowerCase()) {
     score = score + 5;
+    answersArray.push(word);
     document.querySelector("#score").innerHTML = score;
     document.querySelector(".msg").innerText = "Correct Answer!!";
     document.querySelector(".msg").setAttribute("id", "correctAnswer");
     currentWord++;
-    // displayWord(currentWord);
     setTimeout(() => {
-      displayWord(currentWord);
+      displayWord(answersArray);
     }, 1000);
-    console.log("correct");
   } else {
+    answersArray.push(word);
     document.querySelector(".msg").innerText = "Wrong Answer!!";
     document.querySelector(".msg").setAttribute("id", "wrongAnswer");
     currentWord++;
     setTimeout(() => {
-      displayWord(currentWord);
+      displayWord(answersArray);
     }, 1000);
-    console.log("Incorrect");
   }
 };
 
@@ -102,5 +111,3 @@ toggle.onclick = function () {
   container.classList.toggle("active");
   main.classList.toggle("active");
 };
-
-
