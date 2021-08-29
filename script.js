@@ -64,7 +64,7 @@ displayWord(answersArray);
 // Checking for answer
 
 const checkAnswer = (word) => {
-  if (word.toLowerCase() === document.querySelector("#answer").value.toLowerCase()) {
+  if (word.toLowerCase().trim() === document.querySelector("#answer").value.toLowerCase().trim()) {
     score = score + 5;
     answersArray.push(word);
     document.querySelector("#score").innerHTML = score;
