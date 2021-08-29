@@ -12,8 +12,9 @@
 
 .container {
   width: 100%;
-  height: 90%;
+  height: 91%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -270,5 +271,12 @@ footer a {
   .msg {
     top: 110px;
     font-size: 20px;
+  }
+}
+
+@media (max-height: 500px) {
+  .footer {
+    position: fixed;
+    bottom: 0;
   }
 }
